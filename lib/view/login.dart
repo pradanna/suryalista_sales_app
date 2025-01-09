@@ -55,7 +55,8 @@ class LoginView extends StatelessWidget {
                       children: [
                         Text(
                           'Login',
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 5),
                         Text(
@@ -66,48 +67,59 @@ class LoginView extends StatelessWidget {
                         buildTextFieldWithIcon(
                           Icons.account_circle_rounded,
                           'Username',
-                          onChanged: (value) => controller.username.value = value,
+                          onChanged: (value) =>
+                              controller.username.value = value,
                           borderColor: Colors.black, // Change border color here
                         ),
                         SizedBox(height: 20),
                         buildTextFieldWithIcon(
                           Icons.lock,
                           'Password',
-                          onChanged: (value) => controller.password.value = value,
+                          onChanged: (value) =>
+                              controller.password.value = value,
                           obscureText: true,
                           borderColor: Colors.black, // Change border color here
                         ),
                         SizedBox(height: 50),
                         Obx(() => controller.isLoading.value
-                            ? CircularProgressIndicator()
+                            ? CircularProgressIndicator(
+                                color: Colorsmaster.primaryColor,
+                              )
                             : SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: controller.login,
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(vertical: 15.0),
-                              foregroundColor: Colors.white,
-                              backgroundColor: Colorsmaster.primaryColor,
-                            ),
-                            child: Text('Login'),
-                          ),
-                        )),
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    controller.login(context);
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 15.0),
+                                    foregroundColor: Colors.white,
+                                    backgroundColor: Colorsmaster.primaryColor,
+                                  ),
+                                  child: Text('Login'),
+                                ),
+                              )),
                         // InkWell(onTap: (){
                         //   Get.toNamed("/register");
                         // },child: Text("Belum punya akun? Daftar Sekarang", style: TextStyle(color: Colorsmaster.primaryColor),),)
-                    SizedBox(height: 16.h),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Jika ada masalah, silakan hubungi ',
-                        style: TextStyle(color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: 'admin',
-                            style: TextStyle(color: Colors.blue, decoration: TextDecoration.underline),
-                            recognizer: TapGestureRecognizer()..onTap = controller.contactAdmin,
+                        SizedBox(height: 16.h),
+                        RichText(
+                          text: TextSpan(
+                            text: 'Jika ada masalah, silakan hubungi ',
+                            style: TextStyle(color: Colors.black),
+                            children: [
+                              TextSpan(
+                                text: 'admin',
+                                style: TextStyle(
+                                    color: Colors.blue,
+                                    decoration: TextDecoration.underline),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = controller.contactAdmin,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),)
+                        )
                       ],
                     ),
                   ),
@@ -119,6 +131,4 @@ class LoginView extends StatelessWidget {
       ),
     );
   }
-
-
 }

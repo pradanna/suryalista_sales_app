@@ -35,4 +35,5 @@ com.genossys.suryalita_sales_app-packaged_res-33 C:\Users\Windows 10\StudioProje
 com.genossys.suryalita_sales_app-packaged_res-34 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\image_picker_android\intermediates\packaged_res\debug
 com.genossys.suryalita_sales_app-packaged_res-35 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\mobile_scanner\intermediates\packaged_res\debug
 com.genossys.suryalita_sales_app-packaged_res-36 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\path_provider_android\intermediates\packaged_res\debug
-com.genossys.suryalita_sales_app-packaged_res-37 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\url_launcher_android\intermediates\packaged_res\debug
+com.genossys.suryalita_sales_app-packaged_res-37 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\sqflite_android\intermediates\packaged_res\debug
+com.genossys.suryalita_sales_app-packaged_res-38 C:\Users\Windows 10\StudioProjects\suryalita_sales_app\build\url_launcher_android\intermediates\packaged_res\debug

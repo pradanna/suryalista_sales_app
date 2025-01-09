@@ -12,12 +12,12 @@ class SplashScreenController extends GetxController {
   }
 
   void runsplash() async {
-    var token = await box.read("token");
+    var token = await box.read("token_litasurya");
 
     print('token splash ' + token.toString());
     Future.delayed(const Duration(milliseconds: 2000), () {
       if (token == null) {
-        Get.offNamed("base");
+        Get.offNamed("login");
         // Get.offNamed("/login");
       } else {
         Get.offNamed("base");

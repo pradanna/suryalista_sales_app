@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
+import 'package:suryalita_sales_app/Components/BottomSheet/CustomErrorBottomSheet.dart';
+import 'package:suryalita_sales_app/Components/snackbar/showSnackbar.dart';
 import 'package:suryalita_sales_app/model/Customer.dart';
 import 'package:suryalita_sales_app/services/customerService.dart';
 
 class CustomerController extends GetxController {
   var isLoading = false.obs;
+  var isError = false.obs;
   var customers = <Customer>[].obs;
   var filteredCustomers = <Customer>[].obs;
   final CustomerService _service = CustomerService();
@@ -12,20 +15,24 @@ class CustomerController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    fetchTokoCustomers();
   }
 
   void fetchTokoCustomers() async {
     isLoading.value = true;
+    isError.value =false;
+
     try {
       final result = await _service.getTokoCustomers();
       customers.assignAll(result);
       filteredCustomers.assignAll(customers);
 
     } catch (e) {
-      Get.snackbar("Error", e.toString());
+      isError.value =true;
+
     } finally {
       isLoading.value = false;
+      print("FINALY");
+      print("isLoading: ${isLoading.value}");
     }
   }
 

@@ -40,6 +40,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   dio: ^5.5.0+1
   image_picker: ^1.1.2
+  image: ^4.2.0
   qr_flutter: ^4.0.0
   intl: ^0.17.0
   mobile_scanner: ^6.0.2
@@ -47,7 +48,28 @@ dependencies:
   shimmer: ^3.0.0
   logger: ^1.1.0
   sqflite: ^2.4.1
-  
+  uuid: ^3.0.7
+  timezone: ^0.9.0
+  flutter_launcher_icons: ^0.14.2
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/logo.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/logo.png"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -78,6 +100,18 @@ flutter:
     - assets/images/bg.jpg
     - assets/images/icontoko.png
     - assets/images/noimage.jpeg
+    - assets/images/no_internet.jpeg
+    - assets/images/rto.jpeg
+    - assets/images/waiting.jpeg
+    - assets/images/noresult.jpeg
+    - assets/images/error.jpeg
+    - assets/images/server_error.jpeg
+    - assets/images/success.jpeg
+    - assets/images/password_error.jpeg
+    - assets/images/default_avatar.jpeg
+    - assets/images/no_photo.jpeg
+    - assets/images/confirmation.jpeg
+    - assets/images/notindate.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

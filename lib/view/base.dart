@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:suryalita_sales_app/Components/color/colorsMaster.dart';
 import 'package:suryalita_sales_app/controller/baseController.dart';
+import 'package:suryalita_sales_app/view/WeeklySchedulePage.dart';
 import 'package:suryalita_sales_app/view/homeView.dart';
 import 'package:suryalita_sales_app/view/profileView.dart';
 import 'package:suryalita_sales_app/view/transactionListPage.dart';
@@ -15,7 +16,7 @@ class Base extends StatelessWidget {
       body: Obx(() {
         return IndexedStack(
           index: controller.selectedIndex.value,
-          children: [Homeview(), Homeview(), TransactionListPage(), ProfileView()],
+          children: [Homeview(), WeeklySchedulePage(), TransactionListPage(), ProfileView()],
         );
       }),
       bottomNavigationBar: Obx(() {

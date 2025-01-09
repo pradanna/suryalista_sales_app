@@ -17,94 +17,89 @@ class DBHelper {
     return _database!;
   }
 
-  Future<Database> _initDatabase() async {
-    final dbPath = await getDatabasesPath();
-    final path = join(dbPath, 'cart.db');
-
+  _initDatabase() async {
+    String path = join(await getDatabasesPath(), 'suryalita_sales.db');
     return await openDatabase(
       path,
       version: 1,
       onCreate: (db, version) async {
         await db.execute('''
-      CREATE TABLE cart (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  transaction_id TEXT,
-  item_id TEXT NOT NULL,
-  unit TEXT NOT NULL,
-  qty INTEGER NOT NULL,
-  price INTEGER NOT NULL,
-  total INTEGER NOT NULL,
-  name TEXT,  
-  image TEXT  
-)
+          CREATE TABLE carts (
+            id TEXT PRIMARY KEY,
+            transaction_id TEXT NULL,
+            item_id TEXT,
+            item_name TEXT,
+            unit TEXT,
+            qty INTEGER,
+            request_qty INTEGER,
+            price INTEGER,
+            total INTEGER,
+            status TEXT,
+            user_id TEXT NULL,
+            image TEXT NULL
+          )
         ''');
       },
     );
   }
 
-  Future<void> migrateDatabase(Database db) async {
-    // Buat tabel sementara dengan skema baru
-    await db.execute('''
-    CREATE TABLE carts_new (
-      id TEXT PRIMARY KEY,
-      transaction_id TEXT,
-      item_id TEXT NOT NULL,
-      unit TEXT NOT NULL,
-      qty INTEGER NOT NULL,
-      price INTEGER NOT NULL,
-      total INTEGER NOT NULL
-    )
-  ''');
-
-    // Salin data dari tabel lama ke tabel baru
-    await db.execute('''
-    INSERT INTO carts_new (id, transaction_id, item_id, qty, price, total)
-    SELECT id, transaction_id, item_id, qty, price, total FROM carts
-  ''');
-
-    // Hapus tabel lama
-    await db.execute('DROP TABLE carts');
-
-    // Ganti nama tabel baru menjadi nama tabel lama
-    await db.execute('ALTER TABLE carts_new RENAME TO carts');
-  }
-
   Future<int> insertCart(Map<String, dynamic> data) async {
     final db = await database;
-    return await db.insert('cart', data);
+    return await db.insert('carts', data);
   }
 
   // Fetch cart items from the database
   Future<List<Cart>> getCartItems() async {
     final db = await database;
-    final List<Map<String, dynamic>> maps = await db.query("cart");
+    final List<Map<String, dynamic>> maps = await db.query("carts");
 
+    print(maps.toString());
     // Mapping hasil query ke daftar Cart
     return maps.map((map) => Cart.fromMap(map)).toList();
   }
 
-  Future<void> updateCartQuantity(int id, int newQty, int price) async {
-    final db = await database;
-    await db.update(
-      'cart',
-      {'qty': newQty, 'total': newQty * price}, // Update qty and total
-      where: 'id = ?',
-      whereArgs: [id],
-    );
+  Future<void> updateCartQuantity(String id, int newQty, int price) async {
+    try {
+      final db = await database;
+      await db.update(
+        'carts',
+        {'qty': newQty, 'request_qty': newQty, 'total': newQty * price}, // Update qty and total
+        where: 'id = ?',
+        whereArgs: [id],
+      );
 
-    print("update succeess");
+      print("$id $newQty");
+      print("update succeess");
+    }catch(e){
+      print("update error $e");
+    }
   }
 
-  Future<void> deleteCartItem(int id) async {
-    final db = await database;
-    await db.delete('cart', where: 'id = ?', whereArgs: [id]);
-
-    print("deleted data success");
+  Future<void> deleteCartItem(String id) async {
+    final Database db = await openDatabase('suryalita_sales.db');
+    try {
+      await db.delete('carts', where: 'id = ?', whereArgs: [id]);
+      print("deleted data success");
+      getCartItems();
+    }catch(e){
+      print("error :$e");
+    }
   }
 
   Future<void> clearCart() async {
-    final Database db = await openDatabase('cart.db');
-    await db.delete('cart'); // Menghapus semua data di tabel 'cart'
+    final Database db = await openDatabase('suryalita_sales.db');
+    await db.delete('carts'); // Menghapus semua data di tabel 'cart'
     print('Keranjang berhasil dikosongkan');
   }
+
+  Future<int> getTotalQty() async {
+    final db = await database;
+    final result = await db.rawQuery('SELECT SUM(qty) as totalQty FROM carts');
+    if (result.isNotEmpty && result.first['totalQty'] != null) {
+      return result.first['totalQty'] as int;
+    }
+    return 0; // Jika tidak ada data, kembalikan 0
+  }
 }
+
+

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:suryalita_sales_app/model/Item.dart';
+import 'package:suryalita_sales_app/model/ItemPrice.dart';
 import 'package:suryalita_sales_app/services/itemService.dart';
 
 class ProductDetailController extends GetxController {
@@ -18,6 +19,16 @@ class ProductDetailController extends GetxController {
     selectedPrice.value = price;
     calculateTotalPrice();
   }
+
+  void setDefaultUnit(List<ItemPrice> prices) {
+    // Set default unit when the list is loaded
+    if (prices.isNotEmpty) {
+      selectedUnit.value = prices.first.unit; // Set the first unit as default
+      selectedPrice.value = prices.first.price; // Optionally, set the price
+      calculateTotalPrice();
+    }
+  }
+
 
   void increaseQuantity() {
     quantity.value++;
@@ -39,9 +50,9 @@ class ProductDetailController extends GetxController {
     try {
       isLoading.value = true;
       final fetchedItem = await _itemService.fetchDetailProduct(id: id);
-
       if (fetchedItem['item'] != null) {
         item.value = fetchedItem['item'];
+        setDefaultUnit(item.value!.prices!);
       } else {
         isEmpty.value = true; // Tandai data kosong
       }

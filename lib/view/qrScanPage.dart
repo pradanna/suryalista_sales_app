@@ -14,7 +14,8 @@ class QRScannerPage extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Obx(() => Icon(controller.isFlashOn.value ? Icons.flash_on : Icons.flash_off)),
+            icon: Obx(() => Icon(
+                controller.isFlashOn.value ? Icons.flash_on : Icons.flash_off)),
             onPressed: () {
               controller.toggleFlash();
             },
@@ -25,7 +26,6 @@ class QRScannerPage extends StatelessWidget {
         children: [
           // Layer pertama: Kamera untuk scanning
           MobileScanner(
-
             fit: BoxFit.cover,
             onDetect: (barcodeCapture) {
               final List<Barcode> barcodes = barcodeCapture.barcodes;
@@ -35,7 +35,7 @@ class QRScannerPage extends StatelessWidget {
                   controller.updateScannedData(code);
                   Get.snackbar("QR Code Scanned", "Data: $code",
                       snackPosition: SnackPosition.BOTTOM);
-Get.offAndToNamed("/absenpage");
+                  Get.offAndToNamed("/absenpage");
                 }
               }
             },
@@ -71,16 +71,19 @@ Get.offAndToNamed("/absenpage");
 
           // Layer ketiga: Tampilkan hasil scan
           Obx(() => Positioned(
-            bottom: 30,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Text(
-                'Scanned Data: ${controller.scannedData.value}',
-                style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ),
-          )),
+                bottom: 30,
+                left: 0,
+                right: 0,
+                child: Center(
+                  child: Text(
+                    'Scanned Data: ${controller.scannedData.value}',
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              )),
         ],
       ),
     );

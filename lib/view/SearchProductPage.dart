@@ -42,7 +42,7 @@ class SearchProductPage extends StatelessWidget {
       ), // Penutup AppBar
 
       body: Container(
-        color: Colorsmaster.backgroundColor,
+        color: Colors.white,  // Set background color to white
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           children: [
@@ -58,7 +58,7 @@ class SearchProductPage extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.grey[200],
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+                EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
               ),
               onSubmitted: (query) => controller.search.value = query,
             ),
@@ -87,19 +87,18 @@ class SearchProductPage extends StatelessWidget {
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                            vertical: 3.h, horizontal: 8.w),
+                            vertical: 3.h, horizontal: 12.w),
                         decoration: BoxDecoration(
                           color: Colorsmaster.primaryColor,
                           borderRadius: BorderRadius.circular(20.r),
                         ),
                         child: Obx(
-                          () => Text(
+                              () => Text(
                             controller.categoryId.value.isEmpty
                                 ? 'Semua Kategori'
-                                : controller.categoryName.value
-                                    .toString(),
+                                : controller.categoryName.value.toString(),
                             style:
-                                TextStyle(fontSize: 12.sp, color: Colors.white),
+                            TextStyle(fontSize: 12.sp, color: Colors.white),
                           ),
                         ),
                       ),
@@ -117,18 +116,18 @@ class SearchProductPage extends StatelessWidget {
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                            vertical: 3.h, horizontal: 8.w),
+                            vertical: 3.h, horizontal: 12.w),
                         decoration: BoxDecoration(
                           color: Colorsmaster.primaryColor,
                           borderRadius: BorderRadius.circular(20.r),
                         ),
                         child: Obx(
-                          () => Text(
+                              () => Text(
                             controller.sortBy.value.isEmpty
                                 ? 'Urutan: Nama A-Z'
                                 : 'Urutan: ' + controller.sortByText.value,
                             style:
-                                TextStyle(fontSize: 12.sp, color: Colors.white),
+                            TextStyle(fontSize: 12.sp, color: Colors.white),
                           ),
                         ),
                       ),
@@ -154,71 +153,105 @@ class SearchProductPage extends StatelessWidget {
                 });
 
                 controller.sortByvalue.listen((_) {
-                  print(" hehe 2");
                   controller.fetchItems(
                       reset: true); // Reset data saat kategori diubah
                 });
 
                 return controller.isLoading.value
                     ? Center(
-                        child: Column(
-                        children: [
-                          SizedBox(
-                            height: 50.h,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 50.h,
+                        ),
+                        Container(
+                          height: 200.sp,
+                          width: 200.sp,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8), // Menambahkan border dengan sedikit melengkung
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/waiting.jpeg'), // Gambar yang ditampilkan
+                              fit: BoxFit.cover, // Menyesuaikan gambar agar mengisi seluruh area
+                            ),
                           ),
-                          CircularProgressIndicator(),
-                          SizedBox(
-                            height: 50.h,
-                          ),
-                          Text("Tunggu sebentar ya..."),
-                        ],
-                      ))
+                        ),
+                        // CircularProgressIndicator(color: Colorsmaster.primaryColor,),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        Text("Tunggu sebentar ya..."),
+                      ],
+                    ))
                     : controller.isEmpty.value
-                        ? Center(
-                            child: Text("Item yang kamu cari tidak ada..."),
-                          )
-                        : ListView.builder(
-                            controller: _scrollController
-                              ..addListener(() {
-                                // Deteksi apakah scroll sudah di bagian bawah
+                    ? Center(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 50.h,
+                        ),
+                        Container(
+                          height: 200.sp,
+                          width: 200.sp,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8), // Menambahkan border dengan sedikit melengkung
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/noresult.jpeg'), // Gambar yang ditampilkan
+                              fit: BoxFit.cover, // Menyesuaikan gambar agar mengisi seluruh area
+                            ),
+                          ),
+                        ),
+                        // CircularProgressIndicator(color: Colorsmaster.primaryColor,),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        Container(margin: EdgeInsets.symmetric(horizontal: 40.sp),child: Text("Barang yang kamu cari tidak ada, pilih di kategori lain atau gunakan kata pencarian lain...", textAlign: TextAlign.center,)),
+                      ],
+                    ))
+                    : ListView.builder(
+                  controller: _scrollController
+                    ..addListener(() {
+                      // Deteksi apakah scroll sudah di bagian bawah
 
-                                if (controller.isLoading.value == false &&
-                                    _scrollController.position.pixels ==
-                                        _scrollController
-                                            .position.maxScrollExtent) {
-                                  controller
-                                      .fetchItems(); // Memanggil fungsi untuk memuat lebih banyak item
-                                }
-                              }),
-                            itemCount: controller.items.length,
-                            itemBuilder: (context, index) {
-                              if (controller.isLoadingLoadMore.value) {
-                                return Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 10.h),
-                                  child: Center(
-                                    child: CircularProgressIndicator(),
-                                  ),
-                                );
-                              }
+                      if (controller.isLoading.value == false &&
+                          _scrollController.position.pixels ==
+                              _scrollController.position.maxScrollExtent) {
+                        controller.fetchItems(); // Memanggil fungsi untuk memuat lebih banyak item
+                      }
+                    }),
+                  itemCount: controller.items.length,
+                  itemBuilder: (context, index) {
+                    if (controller.isLoadingLoadMore.value) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10.h),
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      );
+                    }
 
-                              final item = controller.items[index];
-                              return Padding(
-                                padding: EdgeInsets.symmetric(vertical: 5.h),
-                                child: ProductCard(
-                                  imageWidget:
-                                      // item.image != null
-                                      //     ? Image.network(
-                                      //         "$baseURL/assets/images/items/" +
-                                      //             item.image!)
-                                      //     :
-                                      Icon(Icons.image),
-                                  name: item.name,
-                                  id: item.id,
-
-                                ),
-                              );
-                            },
-                          );
+                    final item = controller.items[index];
+                    return Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.h),
+                      child: ProductCard(
+                        imageWidget: Image.network(
+                          "$baseURL/" +
+                              item.image,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Image.asset(
+                              'assets/images/noimage.jpeg',
+                              // Replace with your asset path
+                              fit: BoxFit.cover,
+                            );
+                          },
+                        ),
+                        name: item.name,
+                        id: item.id,
+                        description: item.description!,
+                      ),
+                    );
+                  },
+                );
               }),
             ),
           ],

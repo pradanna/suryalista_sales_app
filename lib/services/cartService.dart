@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:suryalita_sales_app/Components/helper/dBhelper.dart';
 import 'package:suryalita_sales_app/apiRequest/apiServices.dart';
 import 'package:suryalita_sales_app/model/Cart.dart';
@@ -6,11 +7,14 @@ import 'package:suryalita_sales_app/model/Cart.dart';
 class CartService {
   final Dio _dio = Dio();
   final dbHelper = DBHelper();
+  final GetStorage box = GetStorage();
 
   Future<String> uploadCartToServer(String customerId) async {
     try {
       // Ambil data cart dari SQLite
       final List<Cart> cartItems = await dbHelper.getCartItems();
+      String token = await box.read('token_litasurya') ?? '';
+      String userid = await box.read('userid_litasurya').toString() ?? '';
 
       if (cartItems.isEmpty) {
         print('Keranjang kosong, tidak ada yang diunggah.');
@@ -23,11 +27,12 @@ class CartService {
       // Siapkan payload untuk API
       final Map<String, dynamic> payload = {
         'customer_id': customerId,
+        'user_id': userid,
         'total': total,
         'cart_items': cartItems.map((cart) {
           return {
             'item_id': cart.itemId,
-            'qty': cart.qty,
+            'qty': cart.qty.value,
             'price': cart.price,
             'total': cart.total,
             'unit': cart.unit,
@@ -35,7 +40,7 @@ class CartService {
         }).toList(), // Konversi cart items menjadi format yang sesuai API
       };
 
-      print("Mengirim data ke API: $baseURL/api/cart/upload");
+      print("Mengirim data ke API: $baseURL/api/carts/upload");
       print("PAYLOAD: ${payload.toString()}");
 
       // Kirim ke server untuk memproses transaksi
@@ -48,10 +53,10 @@ class CartService {
         error: true,
       ));
 
-      final response = await _dio.post('$baseURL/api/cart/upload',
+      final response = await _dio.post('$baseURL/api/carts/upload',
           data: payload,
           options: Options(
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Authorization': 'Bearer $token', 'Content-Type': 'application/json'},
           ));
 
       print("Respons data: ${response.data}");

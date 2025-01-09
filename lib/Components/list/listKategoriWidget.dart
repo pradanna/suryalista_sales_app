@@ -60,8 +60,6 @@ class KategoriProdukWidget extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(height: 10.h),
-                                    // Jarak antara gambar dan nama kategori
-                                    // Shimmer efek untuk nama kategori
                                     Shimmer.fromColors(
                                       baseColor: Colors.grey[300]!,
                                       highlightColor: Colors.grey[100]!,
@@ -75,60 +73,66 @@ class KategoriProdukWidget extends StatelessWidget {
                                 ),
                               ))))
               : Wrap(
-            spacing: 10.w, // Jarak horizontal antara item
-            runSpacing: 10.h, // Jarak vertikal antara item
-            children: categories.map((category) {
-              return InkWell(
-                onTap: () {
-                  print("kategori iD" +category.id);
-                  Get.toNamed(
-                    '/search', // Route ke halaman pencarian
-                    arguments: {
-                      'categoryId': category.id,
-                      'categoryName': category.name,
-                    },
-                  );
-                },
-                child: Container(
-                  width: (MediaQuery.of(context).size.width - 100.w) /
-                      4, // Lebar item menyesuaikan 4 kolom
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Gambar kategori berbentuk lingkaran
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle, // Bentuk lingkaran
-                          color: Colorsmaster.primaryColor,
-                        ),
-                        child: Container(
-                          width: 50.w, // Lebar lingkaran
-                          height: 50.w, // Tinggi lingkaran
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle, // Bentuk lingkaran
-                            color: Colorsmaster.primaryColor,
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  "$baseURL/assets/images/categories/" +
-                                      category.image!), // Gambar kategori
-                              fit: BoxFit.cover,
+                  spacing: 10.w, // Jarak horizontal antara item
+                  runSpacing: 10.h, // Jarak vertikal antara item
+                  children: categories.map((category) {
+                    return InkWell(
+                      onTap: () {
+                        print("kategori iD" + category.id);
+                        Get.toNamed(
+                          '/search', // Route ke halaman pencarian
+                          arguments: {
+                            'categoryId': category.id,
+                            'categoryName': category.name,
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: (MediaQuery.of(context).size.width - 100.w) /
+                            4, // Lebar item menyesuaikan 4 kolom
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Gambar kategori berbentuk lingkaran
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle, // Shape circle
+                                color: Colorsmaster.primaryColor,
+                              ),
+                              child: ClipOval(
+                                // Clip the image into a circle
+                                child: Image.network(
+                                  "$baseURL/" +
+                                      category.image!,
+                                  width: 50.w,
+                                  // Ensure width and height match to maintain circle
+                                  height: 50.w,
+                                  fit: BoxFit.cover,
+                                  // Ensure the image fills the circular container
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Image.asset(
+                                      'assets/images/noimage.jpeg',
+                                      width: 50.w,
+                                      height: 50.w,
+                                      fit: BoxFit
+                                          .cover, // Maintain BoxFit for fallback image
+                                    );
+                                  },
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 10.h),
+                            Text(
+                              category.name,
+                              style: TextStyle(fontSize: 8.sp),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        category.name,
-                        style: TextStyle(fontSize: 8.sp),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }).toList(),
-          ), // Penutup Wrap
+                    );
+                  }).toList(),
+                ), // Penutup Wrap
         ], // Penutup Column Children
       ), // Penutup Padding Column
     ); // Penutup Padding
