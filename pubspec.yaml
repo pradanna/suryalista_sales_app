@@ -100,18 +100,18 @@ flutter:
     - assets/images/bg.jpg
     - assets/images/icontoko.png
     - assets/images/noimage.jpeg
-    - assets/images/no_internet.jpeg
-    - assets/images/rto.jpeg
-    - assets/images/waiting.jpeg
-    - assets/images/noresult.jpeg
-    - assets/images/error.jpeg
-    - assets/images/server_error.jpeg
-    - assets/images/success.jpeg
-    - assets/images/password_error.jpeg
-    - assets/images/default_avatar.jpeg
-    - assets/images/no_photo.jpeg
-    - assets/images/confirmation.jpeg
-    - assets/images/notindate.jpeg
+#    - assets/images/no_internet.jpeg
+#    - assets/images/rto.jpeg
+#    - assets/images/waiting.jpeg
+#    - assets/images/noresult.jpeg
+#    - assets/images/error.jpeg
+#    - assets/images/server_error.jpeg
+#    - assets/images/success.jpeg
+#    - assets/images/password_error.jpeg
+#    - assets/images/default_avatar.jpeg
+#    - assets/images/no_photo.jpeg
+#    - assets/images/confirmation.jpeg
+#    - assets/images/notindate.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

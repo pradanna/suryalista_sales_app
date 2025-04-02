@@ -1,9 +1,9 @@
-#Wed Jan 08 21:36:15 WIB 2025
-base.0=C\:\\Users\\Windows 10\\StudioProjects\\suryalita_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\Windows 10\\StudioProjects\\suryalita_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\Windows 10\\StudioProjects\\suryalita_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.3=C\:\\Users\\Windows 10\\StudioProjects\\suryalita_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.4=C\:\\Users\\Windows 10\\StudioProjects\\suryalita_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+#Mon Mar 31 22:22:31 ICT 2025
+base.0=C\:\\PROJECT\\FLUTTER\\suryalista_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\PROJECT\\FLUTTER\\suryalista_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\PROJECT\\FLUTTER\\suryalista_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\PROJECT\\FLUTTER\\suryalista_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.4=C\:\\PROJECT\\FLUTTER\\suryalista_sales_app\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

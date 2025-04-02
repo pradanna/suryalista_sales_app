@@ -1,0 +1,2 @@
+C:/PROJECT/FLUTTER/suryalista_sales_app/android/app/.cxx/Debug/2w2u3940/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/PROJECT/FLUTTER/suryalista_sales_app/android/app/.cxx/Debug/2w2u3940/armeabi-v7a/CMakeFiles/rebuild_cache.dir

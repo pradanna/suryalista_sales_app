@@ -1,0 +1,39 @@
+com.genossys.suryalita_sales_app-debug-0 C:\PROJECT\FLUTTER\suryalista_sales_app\android\app\src\debug\res
+com.genossys.suryalita_sales_app-main-1 C:\PROJECT\FLUTTER\suryalista_sales_app\android\app\src\main\res
+com.genossys.suryalita_sales_app-pngs-2 C:\PROJECT\FLUTTER\suryalista_sales_app\build\app\generated\res\pngs\debug
+com.genossys.suryalita_sales_app-resValues-3 C:\PROJECT\FLUTTER\suryalista_sales_app\build\app\generated\res\resValues\debug
+com.genossys.suryalita_sales_app-packageDebugResources-4 C:\PROJECT\FLUTTER\suryalista_sales_app\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.genossys.suryalita_sales_app-packageDebugResources-5 C:\PROJECT\FLUTTER\suryalista_sales_app\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.genossys.suryalita_sales_app-debug-6 C:\PROJECT\FLUTTER\suryalista_sales_app\build\app\intermediates\merged_res\debug\mergeDebugResources
+com.genossys.suryalita_sales_app-debug-7 C:\PROJECT\FLUTTER\suryalista_sales_app\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-debug-8 C:\PROJECT\FLUTTER\suryalista_sales_app\build\image_picker_android\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-debug-9 C:\PROJECT\FLUTTER\suryalista_sales_app\build\mobile_scanner\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-debug-10 C:\PROJECT\FLUTTER\suryalista_sales_app\build\path_provider_android\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-debug-11 C:\PROJECT\FLUTTER\suryalista_sales_app\build\sqflite_android\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-debug-12 C:\PROJECT\FLUTTER\suryalista_sales_app\build\url_launcher_android\intermediates\packaged_res\debug\packageDebugResources
+com.genossys.suryalita_sales_app-jetified-lifecycle-process-2.7.0-13 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\0344d0e6d2524f1ce4c82c9f2aa35131\transformed\jetified-lifecycle-process-2.7.0\res
+com.genossys.suryalita_sales_app-lifecycle-livedata-2.7.0-14 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\0a807fc46f6b9e53121181838944e2bf\transformed\lifecycle-livedata-2.7.0\res
+com.genossys.suryalita_sales_app-lifecycle-livedata-core-2.7.0-15 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\0c0474c8b6ebe46e5174a7185831d31f\transformed\lifecycle-livedata-core-2.7.0\res
+com.genossys.suryalita_sales_app-jetified-window-java-1.2.0-16 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\1acefa41f193190d7be84d8cac6ceed2\transformed\jetified-window-java-1.2.0\res
+com.genossys.suryalita_sales_app-core-1.13.1-17 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\2e32461d64217317be008a3bb026daad\transformed\core-1.13.1\res
+com.genossys.suryalita_sales_app-jetified-activity-1.9.2-18 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\47da529aacadb62a17774957f0072718\transformed\jetified-activity-1.9.2\res
+com.genossys.suryalita_sales_app-jetified-core-1.0.0-19 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\4eb56581d0f847cbe563ae6f317e9140\transformed\jetified-core-1.0.0\res
+com.genossys.suryalita_sales_app-jetified-startup-runtime-1.1.1-20 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\553735605c9b3025b243d23b3bbc1de8\transformed\jetified-startup-runtime-1.1.1\res
+com.genossys.suryalita_sales_app-lifecycle-runtime-2.7.0-21 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\59cea153a917ddc3fb7a70774f4a6cc7\transformed\lifecycle-runtime-2.7.0\res
+com.genossys.suryalita_sales_app-jetified-camera-lifecycle-1.3.4-22 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\5c59c50d46113647c72dc96afed0fe46\transformed\jetified-camera-lifecycle-1.3.4\res
+com.genossys.suryalita_sales_app-jetified-window-1.2.0-23 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\76a491967a1fd246f7dcb0b13cad4da8\transformed\jetified-window-1.2.0\res
+com.genossys.suryalita_sales_app-jetified-profileinstaller-1.3.1-24 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\7a1a27d16bd732d44a07e0b8d4c6d6d5\transformed\jetified-profileinstaller-1.3.1\res
+com.genossys.suryalita_sales_app-jetified-camera-core-1.3.4-25 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\81549641b5994f1675008c382a9d240a\transformed\jetified-camera-core-1.3.4\res
+com.genossys.suryalita_sales_app-jetified-annotation-experimental-1.4.0-26 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\8fe554ae02513a0afbd6d4c4e4c65c85\transformed\jetified-annotation-experimental-1.4.0\res
+com.genossys.suryalita_sales_app-jetified-lifecycle-livedata-core-ktx-2.7.0-27 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\9afbcdb7bc190f15645d24d01d3f63c3\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.genossys.suryalita_sales_app-jetified-play-services-basement-18.1.0-28 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\9ce476ae82c5ed12b9b21a73e978e414\transformed\jetified-play-services-basement-18.1.0\res
+com.genossys.suryalita_sales_app-browser-1.8.0-29 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\9d9b8d0bb665c4425b4209fca35757bd\transformed\browser-1.8.0\res
+com.genossys.suryalita_sales_app-lifecycle-viewmodel-2.7.0-30 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\a53b56e4fd25c0c9f4e991d9cd7558e2\transformed\lifecycle-viewmodel-2.7.0\res
+com.genossys.suryalita_sales_app-core-runtime-2.2.0-31 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\a98f10cb9f94205bbe65bbd7ca1883c1\transformed\core-runtime-2.2.0\res
+com.genossys.suryalita_sales_app-jetified-core-ktx-1.13.1-32 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\aadb2ba1716129fd6d4ea30a3ff3dbda\transformed\jetified-core-ktx-1.13.1\res
+com.genossys.suryalita_sales_app-jetified-play-services-base-18.1.0-33 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\ae7e4462aeb61aabb7d3388d5f14b526\transformed\jetified-play-services-base-18.1.0\res
+com.genossys.suryalita_sales_app-jetified-camera-camera2-1.3.4-34 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\bebca3e89aef6eafef5c66fac1d40bff\transformed\jetified-camera-camera2-1.3.4\res
+com.genossys.suryalita_sales_app-jetified-savedstate-1.2.1-35 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\d2aaf92b10901686f678ccb4fec38562\transformed\jetified-savedstate-1.2.1\res
+com.genossys.suryalita_sales_app-jetified-tracing-1.2.0-36 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\f14f7cae509fcc94a4ff732ccb84bd63\transformed\jetified-tracing-1.2.0\res
+com.genossys.suryalita_sales_app-jetified-lifecycle-viewmodel-savedstate-2.7.0-37 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\f205d91ab5d9cf3d47fda5206a4299e0\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.genossys.suryalita_sales_app-fragment-1.7.1-38 C:\Users\Pradana Mahendra\.gradle\caches\8.9\transforms\ff5b62e772e4b6d8785519ac3bf55d52\transformed\fragment-1.7.1\res
