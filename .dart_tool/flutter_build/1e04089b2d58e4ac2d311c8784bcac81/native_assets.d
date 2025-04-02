@@ -1,0 +1,1 @@
+ C:\\Users\\Windows\ 10\\StudioProjects\\suryalita_sales_app\\.dart_tool\\flutter_build\\1e04089b2d58e4ac2d311c8784bcac81\\native_assets.yaml: 
