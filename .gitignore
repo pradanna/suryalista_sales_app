@@ -27,3 +27,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/build/app/outputs/apk/debug/
+/build/app/outputs/flutter-apk/
+/build/app/outputs/apk/release/
+/build/app/outputs/flutter-apk/

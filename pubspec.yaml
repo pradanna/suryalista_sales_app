@@ -53,22 +53,22 @@ dependencies:
   flutter_launcher_icons: ^0.14.2
 
 flutter_launcher_icons:
-  android: "launcher_icon"
+  image_path: "assets/images/ic_launcher.png"
+  android: true
   ios: true
-  image_path: "assets/images/logo.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/images/icon.png"
     background_color: "#hexcode"
     theme_color: "#hexcode"
   windows:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/images/icon.png"
     icon_size: 48 # min:48, max:256, default: 48
   macos:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/images/icon.png"
 
 dev_dependencies:
   flutter_test:
@@ -95,23 +95,25 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
+    - assets/images/icon.png
+    - assets/images/ic_launcher.png
     - assets/images/login.jpg
     - assets/images/user.png
     - assets/images/bg.jpg
     - assets/images/icontoko.png
     - assets/images/noimage.jpeg
-#    - assets/images/no_internet.jpeg
-#    - assets/images/rto.jpeg
-#    - assets/images/waiting.jpeg
-#    - assets/images/noresult.jpeg
-#    - assets/images/error.jpeg
-#    - assets/images/server_error.jpeg
-#    - assets/images/success.jpeg
-#    - assets/images/password_error.jpeg
-#    - assets/images/default_avatar.jpeg
-#    - assets/images/no_photo.jpeg
-#    - assets/images/confirmation.jpeg
-#    - assets/images/notindate.jpeg
+    - assets/images/no_internet.jpeg
+    - assets/images/rto.jpeg
+    - assets/images/waiting.jpeg
+    - assets/images/noresult.jpeg
+    - assets/images/error.jpeg
+    - assets/images/server_error.jpeg
+    - assets/images/success.jpeg
+    - assets/images/password_error.jpeg
+    - assets/images/default_avatar.jpeg
+    - assets/images/no_photo.jpeg
+    - assets/images/confirmation.jpeg
+    - assets/images/notindate.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

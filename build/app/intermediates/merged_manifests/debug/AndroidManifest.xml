@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="35" />
+        android:targetSdkVersion="34" />
     <!--
          The INTERNET permission is required for development. Specifically,
          the Flutter tool needs it to communicate with the running application
@@ -50,7 +50,8 @@
         android:debuggable="true"
         android:extractNativeLibs="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="suryalita_sales_app" >
+        android:label="suryalita_sales_app"
+        android:theme="@style/LaunchTheme" >
         <activity
             android:name="com.genossys.suryalita_sales_app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
